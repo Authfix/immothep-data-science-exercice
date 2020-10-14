@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pip install -r requirements.txt
-uvicorn srv.main:app --host 0.0.0.0 --port 80
+gunicorn --bind=0.0.0.0 srv.main:app -w 4 -k uvicorn.workers.UvicornWorker
