@@ -65,4 +65,6 @@ class DataLoader():
 
         df = df.astype({ 'Code type local':int, 'Valeur fonciere': float})
 
+        df['Date mutation'] = pd.to_datetime(df['Date mutation'], infer_datetime_format=True)
+
         return df
